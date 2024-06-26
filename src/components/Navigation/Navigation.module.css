@@ -1,6 +1,6 @@
 .navList {
   display: flex;
-  gap: 15px;
+  gap: 35px;
   justify-content: flex-end;
 }
 

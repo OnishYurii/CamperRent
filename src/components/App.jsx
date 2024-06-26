@@ -3,8 +3,14 @@ import { Layout } from "./Layout"
 import { HomePage } from "../pages/HomePage/HomePage"
 import { CatalogPage } from "../pages/CatalogPage/CatalogPage"
 import { FavoritesPage } from "../pages/FavoritePage/FavoritePage"
+import { useDispatch } from "react-redux"
+import { fetchCampers } from "../redux/operations"
 
 function App() {
+  const dispatch = useDispatch()
+
+  dispatch(fetchCampers())
+
   return (
     <div>
       <Routes>
