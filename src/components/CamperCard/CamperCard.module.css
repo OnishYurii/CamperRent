@@ -1,0 +1,16 @@
+.description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main-link);
+}
+
+.img {
+  border-radius: 10px;
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+}
