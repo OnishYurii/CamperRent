@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { detailedInformation, fetchCampers } from "./operations"
+import { detailedInformation, fetchCampers } from "./operations.js"
 
 const handlePending = (state) => {
   state.loading = true

@@ -1,0 +1,56 @@
+.page {
+  padding: 40px 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-family: "BungeeSpice";
+  font-size: 30px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.iconSVGFav {
+  stroke: var(--main-text);
+  stroke-width: 1.8px;
+  fill: transparent;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.iconSVGFav:hover,
+.iconSVGFav:focus {
+  stroke: var(--button-active);
+}
+
+.text {
+  font-size: 20px;
+  color: var(--button-active);
+  margin-bottom: 50px;
+}
+
+.link {
+  border-radius: 200px;
+  padding: 16px 40px;
+  border: none;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #fff;
+  background-color: var(--button-active);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover,
+.link:focus {
+  background-color: #d84343;
+}
+
+.wrapForLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
