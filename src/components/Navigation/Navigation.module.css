@@ -5,6 +5,7 @@
 }
 
 .link {
+  position: relative;
   color: var(--main-link);
   font-weight: 600;
   font-size: 24px;
@@ -15,6 +16,12 @@
 .link:hover,
 .link:focus {
   text-decoration: underline;
+}
+
+.link .badge {
+  position: absolute;
+  font-size: 14px;
+  color: var(--button-active);
 }
 
 .active {
