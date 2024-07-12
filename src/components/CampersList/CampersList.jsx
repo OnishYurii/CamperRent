@@ -1,11 +1,7 @@
-import { useSelector } from "react-redux"
-import { selectCampersItems } from "../../redux/camper/selectors"
 import { CamperCard } from "../CamperCard/CamperCard"
 import css from "./CampersList.module.css"
 
-export const CampersList = () => {
-  const items = useSelector(selectCampersItems)
-
+export const CampersList = ({ items }) => {
   return (
     <ul className={css.list}>
       {items.map((item) => (

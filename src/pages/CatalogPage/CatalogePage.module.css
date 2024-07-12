@@ -1,3 +1,28 @@
 .page {
   padding: 40px 60px;
 }
+
+.loadMoreButton {
+  border: 1px solid rgba(71, 84, 103, 0.2);
+  border-radius: 200px;
+  padding: 16px 32px;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--main-text);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loadMoreButton:hover,
+.loadMoreButton:focus {
+  border: 1px solid var(--button-active);
+}
+
+.wrapForList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
