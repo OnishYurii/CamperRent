@@ -6,6 +6,7 @@
   --main-link: #475467;
   --main-text: #101828;
   --background-li: #f2f4f7;
+  --background-input: #f7f7f7;
 }
 
 h1,
@@ -46,6 +47,24 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+input {
+  font-family: inherit;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + span {
+  border: 1px solid var(--button-active);
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 @font-face {

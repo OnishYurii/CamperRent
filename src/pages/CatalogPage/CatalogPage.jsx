@@ -4,6 +4,7 @@ import { fetchCampers } from "../../redux/camper/operations"
 import { selectCampersItems } from "../../redux/camper/selectors"
 import { CampersList } from "../../components/CampersList/CampersList"
 import css from "./CatalogePage.module.css"
+import { Filters } from "../../components/Filters/Filters"
 
 export const CatalogPage = () => {
   const dispatch = useDispatch()
@@ -20,6 +21,7 @@ export const CatalogPage = () => {
 
   return (
     <div className={css.page}>
+      <Filters />
       <div className={css.wrapForList}>
         {items.length > 0 && (
           <CampersList items={items.slice(0, visibleItems)} />
