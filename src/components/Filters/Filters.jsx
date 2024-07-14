@@ -31,7 +31,7 @@ export const Filters = () => {
       <p className={css.filtersText}>Filters</p>
       <fieldset className={css.fieldsetForCheckbox}>
         <legend className={css.legend}>Vehicle equipment</legend>
-        <ul className={css.listOfCheckbox}>
+        <ul className={css.listCommon}>
           <li>
             <label className={css.labelForCheckbox}>
               <input type="checkbox" name="equipment" value="freezer" />
@@ -95,6 +95,44 @@ export const Filters = () => {
                   <use href={`${Image}#icon-Gas`} />
                 </svg>
                 Gas
+              </span>
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset className={css.fieldsetForRadio}>
+        <legend className={css.legend}>Vehicle type</legend>
+        <ul className={css.listCommon}>
+          <li>
+            <label className={css.labelForCheckbox}>
+              <input type="radio" name="type" value="van" />
+              <span className={css.customCheckbox}>
+                <svg width="40" height="28">
+                  <use href={`${Image}#icon-Van`} />
+                </svg>
+                Van
+              </span>
+            </label>
+          </li>
+          <li>
+            <label className={css.labelForCheckbox}>
+              <input type="radio" name="type" value="fully" />
+              <span className={css.individualRadiobox}>
+                <svg width="40" height="28">
+                  <use href={`${Image}#icon-Fully`} />
+                </svg>
+                Fully Integrated
+              </span>
+            </label>
+          </li>
+          <li>
+            <label className={css.labelForCheckbox}>
+              <input type="radio" name="type" value="alcove" />
+              <span className={css.customCheckbox}>
+                <svg width="40" height="28">
+                  <use href={`${Image}#icon-Alcove`} />
+                </svg>
+                Alcove
               </span>
             </label>
           </li>

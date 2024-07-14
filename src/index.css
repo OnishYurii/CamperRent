@@ -57,7 +57,15 @@ input[type="checkbox"] {
   display: none;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
 input[type="checkbox"]:checked + span {
+  border: 1px solid var(--button-active);
+}
+
+input[type="radio"]:checked + span {
   border: 1px solid var(--button-active);
 }
 

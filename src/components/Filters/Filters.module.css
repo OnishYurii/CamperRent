@@ -119,6 +119,23 @@
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.individualRadiobox {
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  padding: 7px 0px;
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.individualRadiobox:hover,
+.individualRadiobox:focus {
+  box-shadow: inset -7px -7px 11px -9px #0003;
+}
+
 .customCheckbox:hover,
 .customCheckbox:focus {
   box-shadow: inset -7px -7px 11px -9px #0003;
@@ -128,7 +145,11 @@
   margin-bottom: 32px;
 }
 
-.listOfCheckbox {
+.fieldsetForRadio {
+  margin-bottom: 32px;
+}
+
+.listCommon {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -136,7 +157,7 @@
   position: relative;
 }
 
-.listOfCheckbox::before {
+.listCommon::before {
   display: block;
   content: "";
   width: 100%;
