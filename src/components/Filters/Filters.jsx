@@ -1,12 +1,41 @@
 import css from "./Filters.module.css"
 import Image from "../../image/sprite.svg"
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { filterCampers } from "../../redux/filters/filtersSlice"
 
 export const Filters = () => {
   const [inputValue, setInputValue] = useState("")
+  const [selectedType, setSelectedType] = useState(null)
+  const dispatch = useDispatch()
+
+  const handleTypeChange = (e) => {
+    const newValue = e.target.value
+
+    if (newValue === selectedType) {
+      setSelectedType(null)
+    } else {
+      setSelectedType(newValue)
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const form = e.target
+    const formData = {
+      location: form.location.value,
+      equipment: Array.from(form.equipment)
+        .filter((checkbox) => checkbox.checked)
+        .map((checkbox) => checkbox.value),
+      vehicleType: form.type.value,
+    }
+
+    dispatch(filterCampers(formData))
+  }
 
   return (
-    <form className={css.form}>
+    <form className={css.form} onSubmit={handleSubmit}>
       <label className={css.labelForInput}>
         Location
         <div className={css.inputWrapper}>
@@ -56,7 +85,7 @@ export const Filters = () => {
           </li>
           <li>
             <label className={css.labelForCheckbox}>
-              <input type="checkbox" name="equipment" value="tv" />
+              <input type="checkbox" name="equipment" value="TV" />
               <span className={css.customCheckbox}>
                 <svg className={`${css.iconSVGCommon}`} width="32" height="32">
                   <use href={`${Image}#icon-TV`} />
@@ -67,7 +96,7 @@ export const Filters = () => {
           </li>
           <li>
             <label className={css.labelForCheckbox}>
-              <input type="checkbox" name="equipment" value="cd" />
+              <input type="checkbox" name="equipment" value="CD" />
               <span className={css.customCheckbox}>
                 <svg className={`${css.iconSVGCommon}`} width="32" height="32">
                   <use href={`${Image}#icon-CD`} />
@@ -78,7 +107,7 @@ export const Filters = () => {
           </li>
           <li>
             <label className={css.labelForCheckbox}>
-              <input type="checkbox" name="equipment" value="shower/wc" />
+              <input type="checkbox" name="equipment" value="shower" />
               <span className={css.customCheckbox}>
                 <svg className={`${css.iconSVGCommon}`} width="32" height="32">
                   <use href={`${Image}#icon-Shower`} />
@@ -105,7 +134,14 @@ export const Filters = () => {
         <ul className={css.listCommon}>
           <li>
             <label className={css.labelForCheckbox}>
-              <input type="radio" name="type" value="van" />
+              <input
+                type="radio"
+                name="type"
+                value="panelTruck"
+                onClick={handleTypeChange}
+                onChange={handleTypeChange}
+                checked={selectedType === "panelTruck"}
+              />
               <span className={css.customCheckbox}>
                 <svg width="40" height="28">
                   <use href={`${Image}#icon-Van`} />
@@ -116,7 +152,14 @@ export const Filters = () => {
           </li>
           <li>
             <label className={css.labelForCheckbox}>
-              <input type="radio" name="type" value="fully" />
+              <input
+                type="radio"
+                name="type"
+                value="fullyIntegrated"
+                onClick={handleTypeChange}
+                onChange={handleTypeChange}
+                checked={selectedType === "fullyIntegrated"}
+              />
               <span className={css.individualRadiobox}>
                 <svg width="40" height="28">
                   <use href={`${Image}#icon-Fully`} />
@@ -127,7 +170,14 @@ export const Filters = () => {
           </li>
           <li>
             <label className={css.labelForCheckbox}>
-              <input type="radio" name="type" value="alcove" />
+              <input
+                type="radio"
+                name="type"
+                value="alcove"
+                onClick={handleTypeChange}
+                onChange={handleTypeChange}
+                checked={selectedType === "alcove"}
+              />
               <span className={css.customCheckbox}>
                 <svg width="40" height="28">
                   <use href={`${Image}#icon-Alcove`} />
