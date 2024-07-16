@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
+import persistReducer from "redux-persist/es/persistReducer"
+import storage from "redux-persist/lib/storage"
 
 const favoriteSlice = createSlice({
   name: "favorite",
@@ -17,5 +19,14 @@ const favoriteSlice = createSlice({
   },
 })
 
-export const favoriteReducer = favoriteSlice.reducer
 export const { addFavorite, removeFavorite } = favoriteSlice.actions
+
+const favoritePersistConfig = {
+  key: "favorite",
+  storage,
+}
+
+export const persistedFavoriteReducer = persistReducer(
+  favoritePersistConfig,
+  favoriteSlice.reducer
+)
