@@ -1,8 +1,7 @@
 .page {
-  padding: 40px 60px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px;
   align-items: center;
 }
 
@@ -38,4 +37,90 @@
 .listWorkIcons {
   width: 75px;
   height: 75px;
+}
+
+.wrapForPerksLists {
+  display: flex;
+  width: 100%;
+}
+
+.wrapForLeftPerks {
+  width: 100%;
+  padding: 60px;
+  background-color: var(--background-header);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.wrapForRightPerks {
+  width: 100%;
+  padding: 60px;
+  background-color: var(--button-active);
+}
+
+.listOfPerksRight {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+.listOfPerksLeft {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.itemOfPerks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.listPerksText {
+  color: var(--main-text);
+  font-size: 18px;
+  width: 450px;
+}
+
+.wrapForContacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.listOfContacts {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.itemOfContacts {
+  padding: 20px 100px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.contactLink {
+  color: var(--main-text);
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.h3ForContacts {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.iconsForContacts {
+  width: 20px;
+  height: 20px;
 }
